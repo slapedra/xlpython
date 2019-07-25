@@ -1,0 +1,61 @@
+﻿Build started 06/08/2010 08:39:35.
+     1>Project "C:\works\inprogress\xlpython\projects\visual\xlpython\xlpython_vc10.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release 2.6\xlpython.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\src /I..\..\..\..\extern\Python\2.6\python /I..\..\..\..\extern\boost\1.39 /nologo /W3 /WX- /MP /O2 /Ob2 /Oi /Ot /Oy /GT /GL /D WIN32 /D NDEBUG /D _LIB /D _USRDLL /D _WINDLL /Gm /EHsc /MD /GS- /Gy /arch:SSE2 /fp:fast /Zc:wchar_t- /Zc:forScope /GR /openmp /Fo"Release 2.6\\" /Fd"Release 2.6\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\src\xlp\functions\infosfunctions.cpp ..\..\..\src\xlp\functions\iofunctions.cpp ..\..\..\src\xlp\functions\objectmanagementfunctions.cpp ..\..\..\src\xlp\functions\pythonexecfunctions.cpp ..\..\..\src\xlp\functions\toolfunctions.cpp ..\..\..\src\xlp\register\infosregister.cpp ..\..\..\src\xlp\register\ioregister.cpp ..\..\..\src\xlp\register\objectmanagementregister.cpp ..\..\..\src\xlp\register\pythonexecutionregister.cpp ..\..\..\src\xlp\register\toolregister.cpp ..\..\..\src\xlp\util\errors.cpp ..\..\..\src\xlp\xl\framewrk.cpp ..\..\..\src\xlp\xl\scalaropervisitor.cpp ..\..\..\src\xlp\xl\xlpoper.cpp ..\..\..\src\xlp\xl\xlref.cpp ..\..\..\src\xlp\xl\xlsession.cpp ..\..\..\src\xlp\xl\xlutils.cpp ..\..\..\src\xlp\xl\xlcellevents\serievalue.cpp ..\..\..\src\xlp\xl\xlcellevents\userserievalue.cpp ..\..\..\src\xlp\python\xlpcontainer.cpp ..\..\..\src\xlp\python\xlpiostream.cpp ..\..\..\src\xlp\python\xlpsession.cpp ..\..\..\src\xlp\python\xlputils.cpp ..\..\..\src\xlp\addin.cpp
+     1>cl : Command line warning D9007: '/Gm' requires '/Zi or /ZI'; option ignored
+     1>cl : Command line warning D9007: '/Gm' requires '/Zi or /ZI'; option ignored
+         infosfunctions.cpp
+     1>cl : Command line warning D9007: '/Gm' requires '/Zi or /ZI'; option ignored
+         iofunctions.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         objectmanagementfunctions.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         pythonexecfunctions.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         toolfunctions.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         infosregister.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         ioregister.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         objectmanagementregister.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         pythonexecutionregister.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         toolregister.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         errors.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         framewrk.cpp
+     1>..\..\..\src\xlp/util/errors.hpp(14): fatal error C1083: Cannot open include file: 'boost/current_function.hpp': No such file or directory
+         scalaropervisitor.cpp
+     1>..\..\..\src\xlp/util/errors.hpp(14): fatal error C1083: Cannot open include file: 'boost/current_function.hpp': No such file or directory
+         xlpoper.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlref.cpp
+         xlsession.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlutils.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         serievalue.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         userserievalue.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlpcontainer.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlpiostream.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlpsession.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         xlputils.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+         addin.cpp
+     1>..\..\..\src\xlp/xlpdefines.hpp(10): fatal error C1083: Cannot open include file: 'boost/python.hpp': No such file or directory
+     1>Done Building Project "C:\works\inprogress\xlpython\projects\visual\xlpython\xlpython_vc10.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.62

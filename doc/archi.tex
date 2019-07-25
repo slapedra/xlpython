@@ -1,0 +1,205 @@
+\chapter{Architecture of \xlp}
+
+\xlp is composed of a set of functions. These functions are directly available in Excel, grouped into a category called \xlp.
+
+
+\
+
+Conceptually functions can be divided into 6 categories:
+
+\begin{itemize}
+\item python execution functions,
+\item object management functions,
+\item output functions,
+\item tool functions.
+\item information functions,
+\end{itemize} 
+
+In the next sections we will investigate the usage of each function.
+
+\begin{figure}
+\begin{minipage}[t]{.55\linewidth}
+\begin{tabular}{ll}
+\multicolumn{2}{l}{\textbf{\textcolor{mred}{execution functions}}} \\
+\textbf{\textcolor{mblue}{name}} & \textbf{\textcolor{mblue}{arguments}}  \\
+\hline\\
+{\sl \bf xlpSet} &  scalar, args, values, index, id, trigger\\
+{\sl \bf xlpGet} & scalar, args, transpose, trigger \\
+{\sl \bf xlpCommandGet} & scalar, args, output, transpose\\
+{\sl \bf xlpApply} &  scalar, args, id, trigger\\
+{\sl \bf xlpGetApply} & scalar, args, transpose, trigger \\
+{\sl \bf xlpCommandGetApply} & scalar, args, output, transpose\\
+{\sl \bf xlpAttr} &  scalar, args, values, index, id, trigger\\
+{\sl \bf xlpGetAttr} & scalar, args, transpose, trigger \\
+{\sl \bf xlpCommandGetAttr} & scalar, args, output, transpose\\
+{\sl \bf xlpExec} & code, args, ids, transpose, trigger \\
+{\sl \bf xlpExecFile} & filename, args, ids, transpose, trigger \\
+{\sl \bf xlpImport} & scalar, id, trigger \\
+{\sl \bf xlpFromImport} & scalar, trigger \\
+{\sl \bf xlpInsertPaths} & paths, trigger \\
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.30\linewidth}
+\begin{tabular}{ll}
+\multicolumn{2}{l}{\textbf{\textcolor{mred}{output functions}}} \\
+\textbf{\textcolor{mblue}{name}} & \textbf{\textcolor{mblue}{arguments}}  \\
+\hline\\
+{\sl \bf xlpFullIO} &  trigger\\
+{\sl \bf xlpIO} & lines, trigger \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& \\
+& 
+\end{tabular}
+\end{minipage}
+\vspace{10mm}
+
+\begin{minipage}[t]{.55\linewidth}
+\begin{tabular}{ll}
+\multicolumn{2}{l}{\textbf{\textcolor{mred}{object management functions}}} \\
+\textbf{\textcolor{mblue}{name}} & \textbf{\textcolor{mblue}{arguments}}  \\
+\hline\\
+{\sl \bf xlpType} &  scalar, trigger\\
+{\sl \bf xlpListAllObjects} & transpose, trigger \\
+{\sl \bf xlpDeleteAllObjects} & trigger \\
+{\sl \bf xlpDeleteObject} & scalar, trigger \\
+{\sl \bf xlpListAllAttr} & scalar, transpose, trigger \\
+{\sl \bf xlpListAttrInfos} & scalar, attr, transpose, trigger
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.30\linewidth}
+\begin{tabular}{ll}
+\multicolumn{2}{l}{\textbf{\textcolor{mred}{information functions}}} \\
+\textbf{\textcolor{mblue}{name}} & \textbf{\textcolor{mblue}{arguments}}  \\
+\hline\\
+{\sl \bf xlpVersion} & trigger \\
+{\sl \bf xlpAuthor} &  trigger \\
+{\sl \bf xlpContributors} & trigger \\
+{\sl \bf xlpPythonPath} & trigger \\
+{\sl \bf xlpPythonVersion} & trigger \\
+{\sl \bf xlpSysPaths} & trigger 
+\end{tabular}
+\end{minipage}
+
+\vspace{10mm}
+ 
+\begin{minipage}[t]{.80\linewidth}
+\begin{tabular}{ll}
+\multicolumn{2}{l}{\textbf{\textcolor{mred}{tool functions}}} \\
+\textbf{\textcolor{mblue}{name}} & \textbf{\textcolor{mblue}{arguments}}  \\
+\hline\\
+{\sl \bf xlpArgs} &  args01, args02, args03, args04, args05, transpose, trigger \\
+{\sl \bf xlpBigArgs} &  args01, args02, ... argsXX ... args18, transpose, trigger \\
+{\sl \bf xlpTrigger} &  trigger01, trigger02, trigger03, trigger04, trigger05\\
+{\sl \bf xlpBigTrigger} &  trigger01, trigger02, ... triggerXX ... trigger20\\
+{\sl \bf xlpTranspose} & scalar, trigger \\
+{\sl \bf xlpT} & scalar, trigger \\
+{\sl \bf xlpAdjustShape} & scalars, rows, columns, transpose, trigger \\
+{\sl \bf xlpLoadFile} & file, id, trigger \\
+{\sl \bf xlpVolatile} & trigger \\
+{\sl \bf xlpReduce} & arguments, transpose, trigger \\
+{\sl \bf xlpR} & arguments, transpose, trigger \\
+{\sl \bf xlpPretty} & arguments, transpose, trigger \\
+{\sl \bf xlpP} & arguments, transpose, trigger \\
+{\sl \bf xlpTime} & trigger \\
+\end{tabular}
+\end{minipage}
+\caption{\xlp functions}
+\end{figure}
+
+\section{Managing object and python into Excel}
+
+An Excel cell can handle different kind of data: 
+
+\begin{itemize}
+\item real numbers \includegraphics[width=1.4cm]{images/real.jpg}
+\item character strings \includegraphics[width=1.4cm]{images/string.jpg}
+\item booleans \includegraphics[width=1.4cm]{images/bool.jpg}
+\item others irrelevant type.
+\end{itemize}
+
+\xlp will directly map thes types to equivalent python types except for the character string. We need a way to differentiate character string from python code. For that purpose, \xlp impose a limitation on string types. Every string that begins by the character {\bf \_} will be interpret as python code.
+
+\
+
+That means that:
+
+\begin{itemize}
+\item \includegraphics[width=1.4cm]{images/preal.jpg} will be interpreted as a real number,
+\item \includegraphics[width=1.4cm]{images/pstring.jpg} will be interpreted as a string,
+\item \includegraphics[width=1.4cm]{images/pbool.jpg} will be interpreted as a boolean.
+\end{itemize}
+
+This solution brings flexibility. For example: 
+
+\begin{itemize}
+\item \includegraphics[width=1.4cm]{images/complex.jpg} will be interpreted as a complex number,
+\item \includegraphics[width=1.4cm]{images/square.jpg} will be interpreted as a real of value $4.0$.
+\end{itemize}
+
+\section{Output cell selection}
+
+The result of each function is a cell matrix (Ctr+Shift+Enter on Excel).
+
+\section{The trigger argument}
+
+In Excel, a function can be declared as {\it volatile}. {\it Volatile} means that the function will be executed when the sheet will be recalculated. That behaviour can lead to troubles. Imagine that you have a long monte-carlo simulation. You cannot accept to compute the simulation every time that you make a modification on your sheet. That is why all the functions of \xlp, except one, are declared as non volatile. However, we need a way to control when a function wil be calculated again. The solution is to add and additionnal argument, called trigger, that will or not refers to another cell. If the trigger refer to another cell, and we modify that cell, Excel will automaticaly calculate again the function. So by controling the value of that cell we control the computation of the functions.
+
+
+\
+
+\includegraphics[width=7cm]{images/trigger1.jpg} \hfill \includegraphics[width=7cm]{images/trigger2.jpg}
+
+\
+
+All the \xlp functions have a trigger argument.
+
+\
+
+A FALSE value trigger will invalidate the function.
+
+\
+
+We mentioned above that one function is declared as volatile. This function is called {\sl xlpVolatile} and its role is to allow to have volatile triggers and so on volatile functions. 
+
+\section{Argument bindings and placeholder definitions}
+
+Excel, like all spreadsheet application, is powerfull to generic calculation with cells. In order to bring that functionality to python, an argument binding methododlogy is implemented in \xlp. That method consists in creating local variables directly available into a python script.  
+
+\
+
+These local variables will be accessible in python. They will begin by "\_". For example the variable "\_size" will be filled with the size of arguments list. See the next section for more details.
+
+\section{Argument convention}
+
+The same argument passing convention has been used for all the functions.
+
+\begin{itemize}
+\item \textsl{scalar} is a real number, a boolean or a character string (including python character strings and scripts).
+\item \textsl{args} is a selection of scalars with specific binding to a python list named "\_args". Each element of the list is directly accessible in python with the placeholder syntax "\_1", "\_2" ... "\_n" where n represents the index of the element in the list. "\_size" will be the global size of the selection, "\_rows" will be the number of rows of the selection and "\_cols" will be the number of columns of the selection.
+\item \textsl{values} is a selection of scalars with specific binding to a python list "\_values". \textcolor{mred}{if no \textsl{args} argument is defined} "\_size" will be the global size of the selection, "\_rows" will be the number of rows of the selection and "\_cols" will be the number of columns of the selection. 
+\item \textsl{index} is a selection of scalars with specific binding to a python list "\_index". 
+\item \textsl{id} is a character string which give a name to a python object. If this argument is empty an automatic name will be given. The name can contain any alphnumeric character plus the "\_" character except in first position.
+\item \textsl{transpose} is a boolean used to transpose the ouput cell. The default value is FALSE and correspond to writing datas from the top to the bottom output cell selection line by line.  
+\item \textsl{trigger} is a trigger reference. 
+\end{itemize}
+
+
+\input{execfunctions}
+
+\input{objectfunctions}
+
+\input{outputfunctions}
+
+\input{toolfunctions}
+
+\input{infosfunctions}

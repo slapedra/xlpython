@@ -1,0 +1,42 @@
+﻿Build started 21/09/2010 08:39:05.
+     1>Project "C:\works\inprogress\xlpython\projects\visual\xlpython\xlpython_vc10.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release 3.1\xlpython.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\works\inprogress\xlpython\projects\visual\xlpython\Release 3.1\xlpython.dll) does not match the Linker's OutputFile property value (C:\works\inprogress\xlpython\lib\xlpython.xll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(991,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.xll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\lib\xlpython.xll" /NOLOGO /LIBPATH:..\..\..\lib /LIBPATH:..\..\..\src\xlp\xl /LIBPATH:..\..\..\..\extern\boost\1.42\lib /LIBPATH:..\..\..\..\extern\Python\3.1\lib xlcall32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release 3.1\xlpython.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\works\inprogress\xlpython\projects\visual\xlpython\Release 3.1\xlpython.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\works\inprogress\xlpython\projects\visual\xlpython\Release 3.1\xlpython.lib" /MACHINE:X86 /DLL "Release 3.1\xlpython.res"
+         "Release 3.1\infosfunctions.obj"
+         "Release 3.1\iofunctions.obj"
+         "Release 3.1\objectmanagementfunctions.obj"
+         "Release 3.1\pythonexecfunctions.obj"
+         "Release 3.1\toolfunctions.obj"
+         "Release 3.1\infosregister.obj"
+         "Release 3.1\ioregister.obj"
+         "Release 3.1\objectmanagementregister.obj"
+         "Release 3.1\pythonexecutionregister.obj"
+         "Release 3.1\toolregister.obj"
+         "Release 3.1\errors.obj"
+         "Release 3.1\framewrk.obj"
+         "Release 3.1\scalaropervisitor.obj"
+         "Release 3.1\xlpoper.obj"
+         "Release 3.1\xlref.obj"
+         "Release 3.1\xlsession.obj"
+         "Release 3.1\xlutils.obj"
+         "Release 3.1\serievalue.obj"
+         "Release 3.1\userserievalue.obj"
+         "Release 3.1\xlpcontainer.obj"
+         "Release 3.1\xlpiostream.obj"
+         "Release 3.1\xlpsession.obj"
+         "Release 3.1\xlputils.obj"
+         "Release 3.1\addin.obj"
+     1>LINK : fatal error LNK1104: cannot open file 'boost_python-vc100-mt-1_42.lib'
+     1>Done Building Project "C:\works\inprogress\xlpython\projects\visual\xlpython\xlpython_vc10.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:11.01

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release 2.6|Win32">
+      <Configuration>Release 2.6</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release 3.1|Win32">
+      <Configuration>Release 3.1</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>xlpython</ProjectName>
+    <ProjectGuid>{1949D58C-7B0B-4D89-BF16-72FB6E6D006E}</ProjectGuid>
+    <RootNamespace>xlpython</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 2.6|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release 2.6|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release 2.6|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release 2.6|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'">$(Configuration)\</IntDir>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 2.6|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\extern\Python\2.6\python;..\..\..\..\extern\boost\1.39;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>xlcall32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\lib\xlpython.xll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\src\xlp\xl;..\..\..\..\extern\boost\1.39\lib;..\..\..\..\extern\Python\2.6\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 3.1|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP4 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\extern\boost\1.42;..\..\..\..\extern\Python\1.3\python;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>xlcall32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\lib\xlpython.xll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\src\xlp\xl;..\..\..\..\extern\boost\1.42\lib;..\..\..\..\extern\Python\3.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\xlp\functions\infosfunctions.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\functions\iofunctions.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\functions\objectmanagementfunctions.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\functions\pythonexecfunctions.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\functions\toolfunctions.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\register\infosregister.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\register\ioregister.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\register\objectmanagementregister.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\register\pythonexecutionregister.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\register\toolregister.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\util\errors.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\framewrk.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\scalaropervisitor.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlpoper.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlref.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlsession.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlutils.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlcellevents\serievalue.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\xl\xlcellevents\userserievalue.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\python\xlpcontainer.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\python\xlpiostream.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\python\xlpsession.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\python\xlputils.cpp" />
+    <ClCompile Include="..\..\..\src\xlp\addin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\xlp\register\register.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\util\errors.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\util\scalar.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\util\scalarvisitors.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\util\singleton.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\util\types.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\framewrk.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\scalaropervisitor.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xl.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcall.h" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xldefines.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xloper.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlpoper.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlref.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlsession.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlutils.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\all.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\customxlcellevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\serievalue.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\userserievalue.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\all.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\copyxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\dftxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\falsexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\flagxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\flipxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\nopxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\nullxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\onexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\onsheetxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\ontimexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\partxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\seekxlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\seriexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\timexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\truexlevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\all.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlalertevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlformulaevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlmessageevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlnameevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xloutputevent.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\python\xlpcontainer.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\python\xlpiostream.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\python\xlpsession.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\python\xlputils.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\config.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\version.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xlpdefines.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\xlp\xlpython.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

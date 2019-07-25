@@ -1,0 +1,137 @@
+\chapter{Tutorial 3: Extraction data from Front Arena to Excel - Correlation Extraction}
+
+Extraction of data from Front Arena to Excel is now directly possible. 
+
+
+\section{Fron Arena connection session}
+
+Before getting data, we need to connect to Front Arena. As Front Arena does not accept multiple connection of the same user we need to create a singleton class. That is the aim of the class FrontArenaSession:
+
+\begin{verbatim}
+
+class FrontArenaSession:
+    
+    class __Impl:
+        
+        def __init__(self, server, userid, password):
+            import sys
+            sys.path.insert(0, r'C:\Program Files\Front\Front Arena42\Prime\4.2')
+            self.ael = __import__('ael')
+            self.acm = __import__('acm')
+            self.ael.connect(server, userid, password)
+ 
+        def __del__(self):
+            self.ael.disconnect()
+            
+        def today(self):
+            return self.ael.date_today()
+        
+        def excel_date(self, ael_date):
+            return self.ael.date_from_string('1899-12-30').days_between(ael_date)
+        
+        def ael_date(self, excel_date):
+            return self.ael.date_from_string('1899-12-30').add_days(excel_date)
+                        
+    __instance = {}
+ 
+    def __init__(self, server, userid, password):
+        self._key = (server, userid, password)
+        if not FrontArenaSession.__instance.has_key(self._key):
+            FrontArenaSession.__instance[self._key] = FrontArenaSession.__Impl(server, userid, password)
+    
+    def __getattr__(self, name):
+        if not name == '_key':
+            return getattr(self.__instance[self._key], name)
+ 
+    def __setattr__(self, aAttr, aValue):
+        if not aAttr == '_key':
+            return setattr(self.__instance[self._key], aAttr, aValue)
+            
+\end{verbatim} 
+
+\section{A data manager class}
+
+\begin{verbatim}
+class DataManager:
+
+    def __init__(self, session):
+        self._session = session
+
+    def getCorrelation(self, name):
+        corr = self._session.ael.CorrelationMatrix[name].correlations()
+        index={}
+        pairs={}
+        for member in corr:   
+            first = self._session.ael.Instrument[member.recaddr0].insid
+            second = self._session.ael.Instrument[member.recaddr1].insid
+            pairs[(first,second)] = member.corr    
+            index[first] = None
+            index[second] = None
+        index = index.keys()
+        index.sort()
+        return CorrelationMatrix(index, pairs, name)
+\end{verbatim}
+
+
+\section{A correlation class}
+
+\begin{verbatim}
+class Matrix:
+
+    def __init__(self, rows, cols):
+        self._rows = rows
+        self._cols = cols
+        self._datas = range(0, rows*cols)
+
+    def __getitem__(self, index):
+        return self._datas.__getitem__(index)
+
+    def __setitem__(self, index, value):
+        self._datas.__setitem__(index, value)
+
+    def __len__(self):
+        return len(self._datas)
+
+    def size1(self):
+        return self._rows
+        
+    def size2(self):
+        return self._cols
+
+    def operator(x, y):
+        if (x > self._rows) or (y > self._cols) or (x < 0) or (y < 0):
+            raise Exception , "bad value for index"
+        return self._datas[x*self._cols+y]
+
+
+class CorrelationMatrix:
+
+    def __init__(self, instruments, corrPairs, name):
+        self.instruments = instruments
+        self._corrPairs = corrPairs
+        self.matrix = Matrix(len(instruments), len(instruments))
+        self.name = name
+        for x in instruments:
+            self._corrPairs[(x, x)] = 1.0
+        offset = 0
+        for x in instruments:
+            for y in instruments:
+                val = 0.0
+                try:
+                    val = self._corrPairs[(x, y)] 
+                except:
+                    val = self._corrPairs[(y, x)]
+                self.matrix.__setitem__(offset, val) 
+                offset += 1
+        
+    def correlation(self, inst1, inst2):
+        try:
+            return self._corrPairs[(inst1, inst2)]
+        except:
+            return self._corrPairs[(inst2, inst1)]
+          
+\end{verbatim}
+
+\section{Putting all together} 
+
+Go to see the file correlationtutorial.xls to see the result.

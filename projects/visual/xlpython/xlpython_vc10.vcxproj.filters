@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="functions">
+      <UniqueIdentifier>{36fcd68b-2341-4852-a594-53eab9b82434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="register">
+      <UniqueIdentifier>{1a18b60a-b7d3-4538-a407-7452a5f8464d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{5de3dd6a-8451-43e2-bacd-11e4929e48dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xl">
+      <UniqueIdentifier>{092c7a4b-04a5-4bf6-bdf2-c1937e6019c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xl\xlcellevents">
+      <UniqueIdentifier>{c35f7099-54f9-4fe4-a686-9b3ff914080d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xl\xlcellevents\xlevents">
+      <UniqueIdentifier>{47ec4d92-7995-44a7-bab9-26a8e259e685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xl\xlcommandevents">
+      <UniqueIdentifier>{157fcf75-01f4-4dcc-850d-99f9d156edf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="python">
+      <UniqueIdentifier>{a7a413e8-c2aa-4b8a-9196-74c108d798e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\xlp\functions\infosfunctions.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\functions\iofunctions.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\functions\objectmanagementfunctions.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\functions\pythonexecfunctions.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\functions\toolfunctions.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\register\infosregister.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\register\ioregister.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\register\objectmanagementregister.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\register\pythonexecutionregister.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\register\toolregister.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\util\errors.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\framewrk.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\scalaropervisitor.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlpoper.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlref.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlsession.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlutils.cpp">
+      <Filter>xl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlcellevents\serievalue.cpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\xl\xlcellevents\userserievalue.cpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\python\xlpcontainer.cpp">
+      <Filter>python</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\python\xlpiostream.cpp">
+      <Filter>python</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\python\xlpsession.cpp">
+      <Filter>python</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\python\xlputils.cpp">
+      <Filter>python</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\xlp\addin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\xlp\register\register.hpp">
+      <Filter>register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\util\errors.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\util\scalar.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\util\scalarvisitors.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\util\singleton.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\util\types.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\framewrk.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\scalaropervisitor.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xl.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcall.h">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevent.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevent.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xldefines.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xloper.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlpoper.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlref.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlsession.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlutils.hpp">
+      <Filter>xl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\all.hpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\customxlcellevent.hpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\serievalue.hpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\userserievalue.hpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevent.hpp">
+      <Filter>xl\xlcellevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\all.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\copyxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\dftxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\falsexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\flagxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\flipxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\nopxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\nullxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\onexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\onsheetxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\ontimexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\partxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\seekxlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\seriexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\timexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcellevents\xlevents\truexlevent.hpp">
+      <Filter>xl\xlcellevents\xlevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\all.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlalertevent.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlformulaevent.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlmessageevent.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xlnameevent.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\xl\xlcommandevents\xloutputevent.hpp">
+      <Filter>xl\xlcommandevents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\python\xlpcontainer.hpp">
+      <Filter>python</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\python\xlpiostream.hpp">
+      <Filter>python</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\python\xlpsession.hpp">
+      <Filter>python</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\python\xlputils.hpp">
+      <Filter>python</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\xlp\config.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\version.hpp" />
+    <ClInclude Include="..\..\..\src\xlp\xlpdefines.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\xlp\xlpython.rc" />
+  </ItemGroup>
+</Project>
